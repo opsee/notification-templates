@@ -1,7 +1,5 @@
 package slack
-var DiscoveryError = `xoxp-3378465181-3443743186-12523682402-5738df13b2
-
-{
+var DiscoveryError = `{
   "text": "*DISCOVERY ERROR*",
   "username": "ErrorBot",
   "icon_url": "https://s3-us-west-1.amazonaws.com/opsee-public-images/slack-avi-48-red.png",
