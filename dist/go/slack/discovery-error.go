@@ -1,11 +1,14 @@
 package slack
-var DiscoveryError = `{
-  "text": "Discovery Error!",
-  "username": "CustomerBot",
-  "icon_url": "https://s3-us-west-1.amazonaws.com/opsee-public-images/opsee-avi-48.jpg",
+var DiscoveryError = `xoxp-3378465181-3443743186-12523682402-5738df13b2
+
+{
+  "text": "*DISCOVERY ERROR*",
+  "username": "ErrorBot",
+  "icon_url": "https://s3-us-west-1.amazonaws.com/opsee-public-images/slack-avi-48-red.png",
   "attachments": [
     {
-      "text": "Customer ID: {{customer_id}}",
+      "text": "Customer: {{customer_id}}",
+      "color": "#f44336",
       "fields": [
         {
           "title": "User ID",
