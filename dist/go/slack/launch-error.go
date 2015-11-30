@@ -1,5 +1,6 @@
-{
-  "text": "*DISCOVERY ERROR*",
+package slack
+var LaunchError = `{
+  "text": "*BASTION LAUNCH ERROR*",
   "username": "ErrorBot",
   "icon_url": "https://s3-us-west-1.amazonaws.com/opsee-public-images/slack-avi-48-red.png",
   "attachments": [
@@ -7,6 +8,11 @@
       "text": "Customer: {{customer_id}}",
       "color": "#f44336",
       "fields": [
+        {
+          "title": "User Email",
+          "value": "{{user_email}}",
+          "short": true
+        },
         {
           "title": "User ID",
           "value": "{{user_id}}",
@@ -16,6 +22,11 @@
           "title": "AWS Region",
           "value": "{{region}}",
           "short": true
+        },
+        {
+          "title": "AMI ID",
+          "value": "{{image_id}}",
+          "short": true  
         },
         {
           "title": "Instance Errors",
@@ -29,9 +40,10 @@
         },
         {
           "title": "Last Error",
-          "value": "{{last_error}}"
+          "value": "{{error}}"
         }
       ]
     }
   ]
 }
+`

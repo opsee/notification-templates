@@ -9,6 +9,11 @@ var NewCustomer = `{
       "color": "#81C784",
       "fields": [
         {
+          "title": "User Email",
+          "value": "{{user_email}}",
+          "short": true
+        },
+        {
           "title": "User ID",
           "value": "{{user_id}}",
           "short": true
