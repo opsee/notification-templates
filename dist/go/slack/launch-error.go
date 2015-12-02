@@ -29,6 +29,16 @@ var LaunchError = `{
           "short": true  
         },
         {
+          "title": "Instance ID",
+          "value": "{{instance_id}}",
+          "short": true  
+        },
+        {
+          "title": "Group ID",
+          "value": "{{group_id}}",
+          "short": true  
+        },
+        {
           "title": "Instance Errors",
           "value": "{{instance_error_count}}",
           "short": true
