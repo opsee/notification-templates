@@ -29,6 +29,16 @@ var LaunchError = `{
           "short": true  
         },
         {
+          "title": "VPC ID",
+          "value": "{{vpc_id}}",
+          "short": true  
+        },
+        {
+          "title": "Subnet ID",
+          "value": "{{subnet_id}}",
+          "short": true  
+        },
+        {
           "title": "Instance ID",
           "value": "{{instance_id}}",
           "short": true  
