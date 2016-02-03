@@ -1,6 +1,8 @@
 package slack
 var CheckPassing = `{
-  "text": "{{check_name}} passing in {{group_name}}",
+ "token": "{{token}}",
+  "channel":"{{channel}}",
+  "text": "*{{check_name}}* passing in *{{group_name}}*",
   "username": "OpseeBot",
   "icon_url": "https://s3-us-west-1.amazonaws.com/opsee-public-images/slack-avi-48-green.png",
   "attachments": [
