@@ -20,7 +20,7 @@ var BastionOnline = `{
         },
         {
           "title": "Current State",
-          "value": "{{current_state}}",
+          "value": "{{status}}",
           "short": true
         }
       ]
