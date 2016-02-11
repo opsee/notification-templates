@@ -20,7 +20,7 @@ var BastionOffline = `{
         },
         {
           "title": "Current State",
-          "value": "{{status}}",
+          "value": "{{current_state}}",
           "short": true
         }
       ]
