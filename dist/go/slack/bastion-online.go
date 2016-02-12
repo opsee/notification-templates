@@ -6,7 +6,7 @@ var BastionOnline = `{
   "attachments": [
     {
       "text": "Customer: {{customer_id}}",
-      "color": "#f44336",
+      "color": "#81C784",
       "fields": [
         {
           "title": "Bastion ID",
