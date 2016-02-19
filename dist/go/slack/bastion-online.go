@@ -1,13 +1,12 @@
 package slack
-
 var BastionOnline = `{
   "text": "*BASTION ONLINE*",
-  "username": "BastionTracker",
+  "username": "ErrorBot",
   "icon_url": "https://s3-us-west-1.amazonaws.com/opsee-public-images/slack-avi-48-green.png",
   "attachments": [
     {
-	  "text": "User: {{name}} ({{email}})",
-      "color": "#f44336",
+      "text": "Customer: {{customer_id}}",
+      "color": "#81C784",
       "fields": [
         {
           "title": "Bastion ID",
