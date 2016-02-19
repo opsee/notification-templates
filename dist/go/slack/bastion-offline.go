@@ -9,6 +9,11 @@ var BastionOffline = `{
       "color": "#f44336",
       "fields": [
         {
+          "title": "Customer ID",
+          "value": "{{customer_id}}",
+          "short": true
+        },
+        {
           "title": "Bastion ID",
           "value": "{{bastion_id}}",
           "short": true
