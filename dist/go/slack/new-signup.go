@@ -6,14 +6,14 @@ var NewSignup = `{
   "attachments": [
     {
       "text": "{{user_name}} - {{user_email}}",
-      "color": "#81C784"{{#if referrer}},
+      "color": "#81C784"{{#referrer}},
       "fields": [
           {
               "title": "Referrer",
               "value": "{{referrer}}",
               "short": true
           }
-          ]{{/if}}
+          ]{{/referrer}}
     }
   ]
 }
