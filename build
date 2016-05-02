@@ -14,8 +14,21 @@ def go_write_slack(filepath):
         f.write("package slack\n")
         f.write("var {} = `{}`\n".format("".join([w.capitalize() for w in name.split("-")]), template))
 
+def go_write_pagerduty(filepath):
+    """writes a template to a go package"""
+    name = os.path.basename(filepath).split(".")[0]
+    dest = os.path.join("dist", "go", "pagerduty", "{}.go".format(name))
+    template = ""
+    with open(filepath, "r") as f:
+        template = f.read()
+    with open(dest, "w") as f:
+        f.write("package pagerduty\n")
+        f.write("var {} = `{}`\n".format("".join([w.capitalize() for w in name.split("-")]), template))
+
+
 package_func = {
-    "slack": go_write_slack
+    "slack": go_write_slack,
+    "pagerduty":go_write_pagerduty
 }
 
 for file in glob.glob("src/**/*.mustache"):
