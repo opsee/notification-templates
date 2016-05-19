@@ -92,5 +92,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	Templates["new-customer"] = NewCustomer
+	Templates["new-customer"] = tmpl
 }

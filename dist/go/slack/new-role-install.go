@@ -27,5 +27,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	Templates["new-role-install"] = NewRoleInstall
+	Templates["new-role-install"] = tmpl
 }

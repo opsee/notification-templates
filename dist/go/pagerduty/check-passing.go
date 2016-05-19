@@ -14,5 +14,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	Templates["check-passing"] = CheckPassing
+	Templates["check-passing"] = tmpl
 }

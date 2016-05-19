@@ -24,5 +24,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	Templates["check-failing"] = CheckFailing
+	Templates["check-failing"] = tmpl
 }

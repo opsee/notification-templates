@@ -51,5 +51,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	Templates["bastion-offline"] = BastionOffline
+	Templates["bastion-offline"] = tmpl
 }

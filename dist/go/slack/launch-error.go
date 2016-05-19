@@ -76,5 +76,5 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	Templates["launch-error"] = LaunchError
+	Templates["launch-error"] = tmpl
 }
