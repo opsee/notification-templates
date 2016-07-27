@@ -3,35 +3,27 @@
 
 import glob, os.path
 
-def go_write_slack(filepath):
+def go_write(filepath, pkg):
     """writes a template to a go package"""
     name = os.path.basename(filepath).split(".")[0]
-    dest = os.path.join("dist", "go", "slack", "{}.go".format(name))
+    dest = os.path.join("dist", "go", pkg, "{}.go".format(name))
     template = ""
     with open(filepath, "r") as f:
         template = f.read()
     with open(dest, "w") as f:
-        f.write("package slack\n")
-        f.write("var {} = `{}`\n".format("".join([w.capitalize() for w in name.split("-")]), template))
-
-def go_write_pagerduty(filepath):
-    """writes a template to a go package"""
-    name = os.path.basename(filepath).split(".")[0]
-    dest = os.path.join("dist", "go", "pagerduty", "{}.go".format(name))
-    template = ""
-    with open(filepath, "r") as f:
-        template = f.read()
-    with open(dest, "w") as f:
-        f.write("package pagerduty\n")
-        f.write("var {} = `{}`\n".format("".join([w.capitalize() for w in name.split("-")]), template))
-
-
-package_func = {
-    "slack": go_write_slack,
-    "pagerduty":go_write_pagerduty
-}
+        cap_name = "".join([w.capitalize() for w in name.split("-")])
+        f.write("package {}\n\n".format(pkg))
+        f.write("import \"github.com/hoisie/mustache\"\n\n")
+        f.write("var {} = `{}`\n\n".format(cap_name, template))
+        f.write("func init() {\n\t")
+        f.write("tmpl, err := mustache.ParseString({})\n\t".format(cap_name))
+        f.write("if err != nil {\n\t\t")
+        f.write("panic(err)\n\t")
+        f.write("}\n\t")
+        f.write("Templates[\"{}\"] = tmpl\n".format(name))
+        f.write("}\n")
 
 for file in glob.glob("src/**/*.mustache"):
     p, f = os.path.split(file)
     pkg = p.split("/")[-1]
-    package_func[pkg](file)
+    go_write(file, pkg)

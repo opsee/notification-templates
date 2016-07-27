@@ -1,4 +1,7 @@
 package slack
+
+import "github.com/hoisie/mustache"
+
 var CheckFailing = `{
   "token": "{{token}}",
   "channel":"{{channel}}",
@@ -15,3 +18,11 @@ var CheckFailing = `{
   ]
 }
 `
+
+func init() {
+	tmpl, err := mustache.ParseString(CheckFailing)
+	if err != nil {
+		panic(err)
+	}
+	Templates["check-failing"] = tmpl
+}
